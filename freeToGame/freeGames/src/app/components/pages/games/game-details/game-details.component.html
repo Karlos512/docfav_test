@@ -1,0 +1,28 @@
+<div class="row" *ngIf=" game$ | async as game">
+  <div class="col-xs-12 col-sm-6 col-md-4" >
+    <div class="card">
+      <div class="image">
+          <img
+          [src]="game.thumbnail"
+          class="card-img-top"
+          />
+      </div>
+      <div class="card-inner">
+        <div class="header text-center">
+            <h2>{{game.title}}</h2>
+          <h4 class="text-muted">{{game.genre}}</h4>
+        </div>
+        <div class="card-body">
+          <p><small class="text-muted"><b>Description: </b>{{game.short_description}}</small></p>
+          <p><small class="text-muted"><b>Developer:</b> {{game.developer}}</small></p>
+          <p><small class="text-muted"><b>Free to game: </b>
+            <a href="game.freetogame_profile_url">{{game.freetogame_profile_url}}</a></small></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><b>Platform:</b> {{game.platform}} </small>
+          <small class="text-muted"><b>Publisher:</b> {{game.publisher}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

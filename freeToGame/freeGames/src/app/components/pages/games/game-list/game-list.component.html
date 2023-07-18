@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let game of games">
+    <div class="card">
+      <div class="image">
+        <a [routerLink]="['/game-details',game.id]">
+          <img
+          [src]="game.thumbnail"
+          class="card-img-top"
+          />
+        </a>
+      </div>
+      <div class="card-inner">
+        <div class="header">
+          <a [routerLink]="['/game-details',game.id]">
+            <h2>{{game.title}}</h2>
+          </a>
+          <h4 class="text-muted">{{game.genre}}</h4>
+          <small class="text-muted">{{game.short_description}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 container-notFound" *ngIf="games.length <= 0">
+    <p>Sin resultados...</p>
+  </div>
+</div>
+<button
+class="btn btn-dark"
+>Subir
+</button>
